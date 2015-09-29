@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<itemlist>
+  <item>
+    <id>1</id>
+    <manid>1</manid>
+    <name>good bike</name>
+    <price>1000</price>
+    <stock>10</stock>
+  </item>
+  <item>
+    <id>2</id>
+    <manid>2</manid>
+    <name>great bike</name>
+    <price>2000</price>
+    <stock>5</stock>
+  </item>
+  <item>
+    <id>3</id>
+    <manid>3</manid>
+    <name>best bike</name>
+    <price>3000</price>
+    <stock>2</stock>
+  </item>
+  <item>
+    <id>4</id>
+    <manid>3</manid>
+    <name>best bike 2</name>
+    <price>3000</price>
+    <stock>2</stock>
+  </item>
+</itemlist>

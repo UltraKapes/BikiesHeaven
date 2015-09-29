@@ -84,4 +84,31 @@ Partial Public Class AuctionHome
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents pagecontent As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+    
+    '''<summary>
+    '''displayDropList control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents displayDropList As Global.System.Web.UI.HtmlControls.HtmlSelect
+    
+    '''<summary>
+    '''Button3 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Button3 As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
+    '''itemresults control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents itemresults As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 End Class

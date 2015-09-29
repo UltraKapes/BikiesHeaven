@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<manufacturerlist>
+  <manufacturer>
+    <id>1</id>
+    <name>man1</name>
+  </manufacturer>
+  <manufacturer>
+    <id>2</id>
+    <name>man2</name>
+  </manufacturer>
+  <manufacturer>
+    <id>3</id>
+    <name>man3</name>
+  </manufacturer>
+</manufacturerlist>

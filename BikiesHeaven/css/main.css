@@ -252,6 +252,23 @@ ul.nostyle i {
 
 }
 
+.border {
+
+   border: 1px solid red;
+   
+
+}
+
+.holder {
+    overflow:auto;
+}
+
+.try{ width:auto; float: left; margin-right:50px;}
+
+#errorLabel {
+    color:red;
+}
+
 #main-slider .item {
   height: 80vh;
   background-repeat: no-repeat;

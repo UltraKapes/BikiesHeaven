@@ -3,13 +3,16 @@
   <user>
     <username>user1</username>
     <password>password1</password>
+    <id>1</id>
   </user>
  <user>
     <username>user2</username>
     <password>password2</password>
+    <id>2</id>
   </user>
  <user>
     <username>user3</username>
     <password>password3</password>
+    <id>3</id>
   </user>
 </users>
