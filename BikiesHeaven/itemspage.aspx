@@ -1,7 +1,8 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site.Master" CodeBehind="AuctionHome.aspx.vb" Inherits="BikiesHeaven.AuctionHome" %>
-
+﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site.Master" CodeBehind="ItemsPage.aspx.vb" Inherits="BikiesHeaven.itemspage" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <header id="header">
+
+
+     <header id="header">
         <nav id="main-menu" class="navbar navbar-default navbar-fixed-top" role="banner">
             <div class="container">
                 <div class="navbar-header">
@@ -30,36 +31,10 @@
     </header><!--/header-->
 
     <section class="belowheader">
-        <div id="login" class="row" runat="server">
-            <div  class="loginwrapper" >
-                <div class="login"></div>
-                Please Enter Login
-                <br /><br />
-                <asp:Label ID="usernameLabel" runat="server" Text="Username "></asp:Label>
-                <br />
-                <asp:TextBox ID="usernameTextBox" runat="server"></asp:TextBox>&nbsp;
-                <br />
-                <asp:Label ID="passwordLabel" runat="server" Text="Password"></asp:Label><br />
-                <asp:TextBox ID="passwordTextBox" runat="server"></asp:TextBox><br />
-                <br />
-                <asp:Button ID="loginButton" class="btn btn-primary btn-lg" runat="server" Text="Login" /><br />
-                <asp:Label ID="errorLabel" runat="server" Text=""></asp:Label>
-          </div>
-
-        </div>
-        <div id="pagecontent" class="row" runat="server">
-            <div >
-                Welcome User <% Response.Write(Session("username"))%>
-                <br />
-                <br />
-                <select id="displayDropList" runat="server"></select><asp:Button ID="Button3" runat="server" Text="Search" />
-                <br />
-            </div>
-            <div id ="itemresults" runat="server" class="holder">
-            </div>
-        </div>
+        <% Dim itemid As String
+            itemid = Request.QueryString("itemid")
+        %>
+        hello <%= itemid %>
         
     </section>
-    
-
 </asp:Content>

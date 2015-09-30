@@ -294,6 +294,7 @@
     <Content Include="images\testimonial\01.jpg" />
     <Content Include="images\testimonial\bg.jpg" />
     <Content Include="images\work-process\bg.jpg" />
+    <Content Include="ItemsPage.aspx" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\html5shiv.js" />
     <Content Include="js\jquery.inview.min.js" />
@@ -475,6 +476,13 @@
     </Compile>
     <Compile Include="Global.asax.vb">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="ItemsPage.aspx.designer.vb">
+      <DependentUpon>ItemsPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ItemsPage.aspx.vb">
+      <DependentUpon>ItemsPage.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Models\IdentityModels.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />

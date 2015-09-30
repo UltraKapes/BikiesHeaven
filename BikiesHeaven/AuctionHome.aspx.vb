@@ -72,6 +72,8 @@ Public Class AuctionHome
     Protected Sub LoadManufacturers()
         Dim newListItem As ListItem
         Try
+            newListItem = New ListItem("All manufacturers", "")
+            displayDropList.Items.Add(newListItem)
             Dim strPath As String = AppDomain.CurrentDomain.BaseDirectory
             Dim manufacturerlist As XDocument = XDocument.Load(strPath + "data/manufacturers.xml")
             For Each node As XElement In manufacturerlist...<manufacturer>
@@ -106,27 +108,73 @@ Public Class AuctionHome
             itemresults.InnerHtml = ""
             Dim strPath As String = AppDomain.CurrentDomain.BaseDirectory
             Dim itemlist As XDocument = XDocument.Load(strPath + "data/items.xml")
-            For Each node As XElement In itemlist...<item>
-                Dim list As New ArrayList
-                Dim xmlid As String = node.Element("manid")
-                If xmlid = id Then
-
-                    List.Add(node.Element("id"))
-                    list.Add(node.Element("name"))
-                    list.Add(node.Element("price"))
-                    list.Add(node.Element("stock"))
+            If id = "" Then
+                For Each node As XElement In itemlist...<item>
+                    Dim list As New ArrayList
+                    Dim xmlid As String = node.Element("manid")
+                    Dim idnode As XElement = node.Element("id")
+                    Dim namenode As XElement = node.Element("name")
+                    Dim pricenode As XElement = node.Element("price")
+                    Dim stocknode As XElement = node.Element("stock")
+                    list.Add(idnode.Value)
+                    list.Add(namenode.Value)
+                    list.Add(pricenode.Value)
+                    list.Add(stocknode.Value)
                     items.Add(list)
-                End If
-            Next
-            For i = 0 To items.Count - 1
-                Dim appendItems As New Literal()
-                appendItems.Text = "<div id=" + "'" + items(i)(0).ToString() + "'" + " class='try'> Name :  " + items(i)(1).ToString() + "<br/>
-                Price : " + items(i)(2).ToString() + "<br/>
-                Stock : " + items(i)(3).ToString() + "</div>"
-                itemresults.Controls.Add(appendItems)
-            Next i
 
-            Session("username") = items(1)(1).ToString()
+                Next
+                For i = 0 To items.Count - 1
+                    Dim appendItems As New Literal()
+                    If items(i)(3).ToString() = "0" Then
+                        appendItems.Text = "<div id=" + "'" + items(i)(0).ToString() + "'" + " class='try'> Name :  " + items(i)(1).ToString() + "<br/>
+                        Price : " + items(i)(2).ToString() + "<br/>
+                        Stock : " + items(i)(3).ToString() + "</div>"
+                        itemresults.Controls.Add(appendItems)
+
+                    Else
+                        appendItems.Text = "<div id=" + "'" + items(i)(0).ToString() + "'" + " class='try'><a href='ItemsPage.aspx?itemid=" + items(i)(0).ToString() + "'> Name :  " + items(i)(1).ToString() + "<br/>
+                        Price : " + items(i)(2).ToString() + "<br/>
+                        Stock : " + items(i)(3).ToString() + "</a></div>"
+                        itemresults.Controls.Add(appendItems)
+                    End If
+                Next i
+            Else
+                For Each node As XElement In itemlist...<item>
+                    Dim list As New ArrayList
+                    Dim xmlid As String = node.Element("manid")
+                    If xmlid = id Then
+                        Dim idnode As XElement = node.Element("id")
+                        Dim namenode As XElement = node.Element("name")
+                        Dim pricenode As XElement = node.Element("price")
+                        Dim stocknode As XElement = node.Element("stock")
+                        list.Add(idnode.Value)
+                        list.Add(namenode.Value)
+                        list.Add(pricenode.Value)
+                        list.Add(stocknode.Value)
+                        items.Add(list)
+                    End If
+
+                Next
+                For i = 0 To items.Count - 1
+                    Dim appendItems As New Literal()
+                    If items(i)(3).ToString() = "0" Then
+                        appendItems.Text = "<div id=" + "'" + items(i)(0).ToString() + "'" + " class='try'> Name :  " + items(i)(1).ToString() + "<br/>
+                        Price : " + items(i)(2).ToString() + "<br/>
+                        Stock : " + items(i)(3).ToString() + "</div>"
+                        itemresults.Controls.Add(appendItems)
+
+                    Else
+                        appendItems.Text = "<div id=" + "'" + items(i)(0).ToString() + "'" + " class='try'><a href='ItemsPage.aspx?itemid=" + items(i)(0).ToString() + "'> Name :  " + items(i)(1).ToString() + "<br/>
+                        Price : " + items(i)(2).ToString() + "<br/>
+                        Stock : " + items(i)(3).ToString() + "</a></div>"
+                        itemresults.Controls.Add(appendItems)
+                    End If
+                Next i
+
+            End If
+
+
+            Session("username") = items(1)(3).ToString()
         Catch errorVariable As Exception
             'Error trapping
             Console.Write(errorVariable.ToString())

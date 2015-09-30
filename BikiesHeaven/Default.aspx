@@ -22,8 +22,8 @@
                     <ul class="nav navbar-nav">
                         <li class="scroll active"><a href="#">Home</a></li>
                         <li class="scroll"><a href="#">Our Bikes</a></li>
-                        <li class="scroll"><a href="#">Custom</a></li>
-                        <li class="scroll"><a href="#">Auction</a></li> 
+                        <li class="scroll"><a href="Custom">Custom</a></li>
+                        <li class="scroll"><a href="AuctionHome">Auction</a></li> 
                         <li class="scroll"><a href="#">About</a></li>
                         <li class="scroll"><a href="#">Team</a></li>
                         <li class="scroll"><a href="#">Contact</a></li>                        

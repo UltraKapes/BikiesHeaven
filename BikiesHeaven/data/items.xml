@@ -28,4 +28,11 @@
     <price>3000</price>
     <stock>2</stock>
   </item>
+<item>
+    <id>4</id>
+    <manid>3</manid>
+    <name>best bike 3</name>
+    <price>3000</price>
+    <stock>0</stock>
+  </item>
 </itemlist>
