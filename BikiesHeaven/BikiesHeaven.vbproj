@@ -207,11 +207,17 @@
     <Content Include="css\owl.transitions.css" />
     <Content Include="css\prettyPhoto.css" />
     <Content Include="css\responsive.css" />
+    <Content Include="Custom.aspx" />
+    <Content Include="data\customitems.xml" />
     <Content Include="data\manufacturers.xml" />
     <Content Include="data\users.xml">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="data\items.xml" />
+    <Content Include="data\items.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="data\bids.xml" />
+    <Content Include="data\workshops.xml" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -225,6 +231,11 @@
     <Content Include="fonts\FontAwesome.otf" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="images\animated-number\bg.jpg" />
+    <Content Include="images\bike1.jpg" />
+    <Content Include="images\bike2.jpg" />
+    <Content Include="images\bike3.jpg" />
+    <Content Include="images\bike4.jpg" />
+    <Content Include="images\bike5.jpg" />
     <Content Include="images\blog\01.jpg" />
     <Content Include="images\blog\02.jpg" />
     <Content Include="images\blog\03.jpg" />
@@ -466,6 +477,13 @@
     <Compile Include="AuctionHome.aspx.vb">
       <DependentUpon>AuctionHome.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Custom.aspx.designer.vb">
+      <DependentUpon>Custom.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Custom.aspx.vb">
+      <DependentUpon>Custom.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Default.aspx.vb">
       <SubType>ASPXCodeBehind</SubType>

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<workshoplist>
+  <workshop>
+    <id>1</id>
+    <name>workshop1</name>
+  </workshop>
+  <workshop>
+    <id>2</id>
+    <name>workshop2</name>
+  </workshop>
+  <workshop>
+    <id>3</id>
+    <name>workshop3</name>
+  </workshop>
+</workshoplist>
+

@@ -31,10 +31,59 @@
     </header><!--/header-->
 
     <section class="belowheader">
-        <% Dim itemid As String
-            itemid = Request.QueryString("itemid")
+        <%
+
+            Dim itemid As String = Request.QueryString("itemid")
+            Dim strPath As String = AppDomain.CurrentDomain.BaseDirectory
+            Dim itemlist As XDocument = XDocument.Load(strPath + "data/items.xml")
+
+
+            For Each node As XElement In itemlist...<item>
+                If node.Element("id") = itemid Then
+                    Dim idnode As XElement = node.Element("id")
+                    Dim namenode As XElement = node.Element("name")
+                    Dim pricenode As XElement = node.Element("price")
+                    Dim stocknode As XElement = node.Element("stock")
+                    Dim picnode As XElement = node.Element("pic")
+                    Session("idvalue") = idnode.Value
+                    Session("namevalue") = namenode.Value
+                    Session("pricevalue") = pricenode.Value
+                    Session("stockvalue") = stocknode.Value
+                    Session("picvalue") = picnode.Value
+                End If
+            Next
+
+
+            Dim currentbid As XDocument = XDocument.Load(strPath + "data/bids.xml")
+            For Each node As XElement In currentbid...<bid>
+                If node.Element("itemid") = itemid Then
+                    Dim bidnode As XElement = node.Element("bidamount")
+                    Session("highestBid") = bidnode.Value
+                    Exit For
+                Else Session("highestBid") = ""
+                End If
+            Next
+
         %>
-        hello <%= itemid %>
-        
+        <div id="info" runat="server" class="holder">
+           
+            
+            <br />
+           
+            Highest bid:$<% Response.Write(Session("highestBid"))%><br>
+            Item Id:<% Response.Write(Session("idvalue"))%><br>
+            Item name: <% Response.Write(Session("namevalue"))%><br>
+            Price: <% Response.Write(Session("pricevalue"))%> <br>
+            Stock: <% Response.Write(Session("stockvalue"))%><br>
+            <img src='images/<% Response.Write(Session("picvalue"))%>.jpg'  alt='bike picture' height='200' width='200'><br/>
+            Bid Amount: $<asp:TextBox ID="bidamount" runat="server"></asp:TextBox><br/>
+            <asp:Button ID="Button1" class='btn btn-primary btn-lg' runat="server" Text="Back to Bikes" /><asp:Button ID="placebid" class='btn btn-primary btn-lg' runat="server" Text="Place a Bid" />
+            <br>
+            
+            *minimum bid must be over $5000
+                           
+            
+        </div>
+       
     </section>
 </asp:Content>

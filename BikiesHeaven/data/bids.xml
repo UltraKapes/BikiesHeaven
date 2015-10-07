@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<bidlist>
+  <bid>
+    <itemid>3</itemid>
+    <userid>1</userid>
+    <bidamount>10000</bidamount>
+  </bid>
+  <bid>
+    <itemid>3</itemid>
+    <userid>1</userid>
+    <bidamount>9000</bidamount>
+  </bid>
+  <bid>
+    <itemid>3</itemid>
+    <userid>1</userid>
+    <bidamount>6000</bidamount>
+  </bid>
+  <bid>
+    <itemid>4</itemid>
+    <userid>1</userid>
+    <bidamount>5002</bidamount>
+  </bid>
+  <bid>
+    <itemid>4</itemid>
+    <userid>1</userid>
+    <bidamount>5001</bidamount>
+  </bid>
+</bidlist>

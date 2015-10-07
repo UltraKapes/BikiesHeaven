@@ -6,6 +6,7 @@
     <name>good bike</name>
     <price>1000</price>
     <stock>10</stock>
+    <pic>bike1</pic>
   </item>
   <item>
     <id>2</id>
@@ -13,6 +14,7 @@
     <name>great bike</name>
     <price>2000</price>
     <stock>5</stock>
+    <pic>bike2</pic>
   </item>
   <item>
     <id>3</id>
@@ -20,6 +22,7 @@
     <name>best bike</name>
     <price>3000</price>
     <stock>2</stock>
+    <pic>bike3</pic>
   </item>
   <item>
     <id>4</id>
@@ -27,12 +30,14 @@
     <name>best bike 2</name>
     <price>3000</price>
     <stock>2</stock>
+    <pic>bike4</pic>
   </item>
 <item>
-    <id>4</id>
+    <id>5</id>
     <manid>3</manid>
     <name>best bike 3</name>
     <price>3000</price>
     <stock>0</stock>
+    <pic>bike5</pic>
   </item>
 </itemlist>

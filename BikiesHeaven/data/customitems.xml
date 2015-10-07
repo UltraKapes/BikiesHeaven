@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<itemlist>
+  <item>
+    <id>1</id>
+    <workshopid>1</workshopid>
+    <name>custom seat</name>
+    <price>500</price>
+    <stock>10</stock>
+  </item>
+  <item>
+    <id>2</id>
+    <workshopid>2</workshopid>
+    <name>custom handle bars</name>
+    <price>700</price>
+    <stock>15</stock>
+  </item>
+  <item>
+    <id>3</id>
+    <workshopid>3</workshopid>
+    <name>custom rims</name>
+    <price>1000</price>
+    <stock>20</stock>
+  </item>
+  <item>
+    <id>4</id>
+    <workshopid>1</workshopid>
+    <name>custom tank</name>
+    <price>750</price>
+    <stock>3</stock>
+  </item>
+  <item>
+    <id>5</id>
+    <workshopid>1</workshopid>
+    <name>custom paint</name>
+    <price>2000</price>
+    <stock>N/A</stock>
+  </item>
+  <item>
+    <id>6</id>
+    <workshopid>2</workshopid>
+    <name>custom guards</name>
+    <price>1500</price>
+    <stock>10</stock>
+  </item>
+</itemlist>

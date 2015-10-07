@@ -10,7 +10,7 @@ Public Class AuctionHome
         If Session("signedIn") = True Then
             login.Visible = False
             pagecontent.Visible = True
-            'Session.Remove("signedIn")
+
         Else
             login.Visible = True
             pagecontent.Visible = False
@@ -53,8 +53,6 @@ Public Class AuctionHome
             If valid = True Then
                 Session("signedIn") = True
                 Session("userID") = xmlid
-                'uncomment
-                'Session("username") = xmuser
                 Response.Redirect("~/AuctionHome")
             Else
                 Session("loginError") = "Incorrect Login Or Password"
@@ -94,7 +92,7 @@ Public Class AuctionHome
     Protected Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         Dim selectedID As String = displayDropList.Value
         displayItems(selectedID)
-        'Session("username") = selectedID
+
     End Sub
 
     Protected Sub displayItems(manufuactuerID)
