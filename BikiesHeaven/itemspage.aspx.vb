@@ -2,6 +2,8 @@
 Imports System.Xml
 Imports System.Text
 Imports System.Xml.Linq
+Imports System.Net.Mail
+Imports System.Web.Mail
 
 Public Class itemspage
     Inherits System.Web.UI.Page
@@ -118,7 +120,36 @@ Public Class itemspage
                                 root.InsertBefore(bid, root.FirstChild)
 
                                 xmlfile.Save(location)
-                                MsgBox("Your bid of $" + amount + " has been accepted", , "Completed Bid")
+
+                                Try
+                                    Dim Smtp_Server As New SmtpClient
+                                    Dim e_mail As New Net.Mail.MailMessage()
+                                    Smtp_Server.UseDefaultCredentials = False
+                                    Smtp_Server.Credentials = New Net.NetworkCredential("bikiesheaven@gmail.com", "password")
+                                    Smtp_Server.Port = 587
+                                    Smtp_Server.EnableSsl = True
+                                    Smtp_Server.Host = "smtp.gmail.com"
+
+                                    e_mail = New Net.Mail.MailMessage()
+                                    e_mail.From = New MailAddress("bhauction@gmail.com")
+                                    e_mail.To.Add("bids@store.com")
+                                    e_mail.Subject = "New Bid"
+                                    e_mail.IsBodyHtml = False
+                                    e_mail.Body = "Bid by " + Session("userID") + " on item " + Session("idvalue") + " for amount $" + amount
+                                    Smtp_Server.Send(e_mail)
+                                    MsgBox("Mail Sent")
+
+                                Catch error_t As Exception
+                                    'MsgBox(error_t.ToString)
+                                    Exit Try
+                                End Try
+
+
+                                MsgBox("Your bid Of $" + amount + " has been accepted", , "Completed Bid")
+                                Dim result2 = MsgBox("Proceed to Confirmation Document?", MsgBoxStyle.YesNo, "Confirm Bid")
+                                If result2 = MsgBoxResult.Yes Then
+                                    Response.Redirect("Confirmation.aspx")
+                                End If
 
                             End If
                         End If
