@@ -1,6 +1,46 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <bidlist>
   <bid>
+    <itemid>3</itemid>
+    <userid>1</userid>
+    <bidamount>10002</bidamount>
+  </bid>
+  <bid>
+    <itemid>2</itemid>
+    <userid>1</userid>
+    <bidamount>5001</bidamount>
+  </bid>
+  <bid>
+    <itemid>1</itemid>
+    <userid>1</userid>
+    <bidamount>5001</bidamount>
+  </bid>
+  <bid>
+    <itemid>4</itemid>
+    <userid>1</userid>
+    <bidamount>5012</bidamount>
+  </bid>
+  <bid>
+    <itemid>4</itemid>
+    <userid>1</userid>
+    <bidamount>5011</bidamount>
+  </bid>
+  <bid>
+    <itemid>4</itemid>
+    <userid>1</userid>
+    <bidamount>5010</bidamount>
+  </bid>
+  <bid>
+    <itemid>4</itemid>
+    <userid>1</userid>
+    <bidamount>5008</bidamount>
+  </bid>
+  <bid>
+    <itemid>4</itemid>
+    <userid>1</userid>
+    <bidamount>5007</bidamount>
+  </bid>
+  <bid>
     <itemid>4</itemid>
     <userid>1</userid>
     <bidamount>5006</bidamount>

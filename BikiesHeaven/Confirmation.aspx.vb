@@ -14,6 +14,12 @@ Public Class Confirmation
             Response.Redirect("AuctionHome.aspx")
         End If
 
+        TextBox1.Text = Session("userID")
+        TextBox2.Text = Session("idvalue")
+        TextBox3.Text = Session("namevalue")
+        TextBox4.Text = Session("highestBid")
+
+
         Dim useridcheck As String = ""
         Dim isAcutalBidder As Boolean = False
         Dim strPath As String = AppDomain.CurrentDomain.BaseDirectory

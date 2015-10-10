@@ -45,9 +45,9 @@
 &nbsp;&nbsp;&nbsp;
                 <asp:TextBox ID="TextBox3" runat="server" Enabled="False"></asp:TextBox>
                 <br />
-                <asp:Label ID="Label4" runat="server" Text="Amount"></asp:Label>
+                <asp:Label ID="Label4" runat="server" Text="Amount" ></asp:Label>
 &nbsp;&nbsp;&nbsp;&nbsp; $
-                <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
+                <asp:TextBox ID="TextBox4" runat="server" Enabled="False"></asp:TextBox>
                 <br />
                 <asp:Button ID="Button1" class='btn btn-primary btn-lg' runat="server" Text="Back to Bikes" />
                 <asp:Button ID="Button2" class='btn btn-primary btn-lg' OnClientClick="printpage()" runat="server" Text="Print Form" />
