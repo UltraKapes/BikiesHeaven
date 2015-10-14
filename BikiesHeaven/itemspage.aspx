@@ -12,7 +12,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                  <%--  <a class="navbar-brand" href="Default.aspx"><img src="images/logo.png" alt="logo" ><span id="logo">Bikies Heaven</span></a>--%>
+                   <a class="navbar-brand logo" href="Default.aspx"><img src="images/bike.png" alt="logo"></a>
                 </div>
 				
                 <div class="collapse navbar-collapse navbar-right">
@@ -65,25 +65,56 @@
             Next
 
         %>
-        <div id="info" runat="server" class="holder">
+         <div id="Div1" runat="server" class="holder">
+           
+            <h2>Bike Auction</h2>
+            <div class="col-md-5 bike-img pull-left">
+                <img src='images/<% Response.Write(Session("picvalue"))%>.jpg'  alt='bike picture' height='200' width='200'>
+             </div>
+            <div class="col-md-7 action-info">
+           <table class="table table-bordered">
+            <tr>
+                <th>Highest bid</th>
+                <td>$<% Response.Write(Session("highestBid"))%></td>
+            </tr>
+            <tr>
+              <th>Item id</th>
+              <td>$<% Response.Write(Session("idvalue"))%></td>
+            </tr>
+            <tr>
+              <th>Item name</th>
+              <td>$<% Response.Write(Session("namevalue"))%></td>
+            </tr>
+            <tr>
+              <th>Price</th>
+              <td>$<% Response.Write(Session("pricevalue"))%></td>
+            </tr>
+            <tr>
+              <th>Stock</th>
+              <td>$<% Response.Write(Session("stockvalue"))%></td>
+            </tr>
+ 
+            <tr>
+              <th>Bid Amount</th>
+              <td>$ <asp:TextBox ID="bidamount" runat="server"></asp:TextBox><br />
+                   *minimum bid must be over $5000
+              </td>
+            </tr>
+
+
+
+           </table>
+                <div class="pull-right"><asp:Button ID="placebid" class='btn btn-primary btn-lg' runat="server" Text="Place a Bid" />&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:Button ID="Button1" class='btn btn-primary btn-lg' runat="server" Text="Back to Bikes" /></div>
+            </div>
            
             
-            <br />
-           
-            Highest bid:$<% Response.Write(Session("highestBid"))%><br>
-            Item Id:<% Response.Write(Session("idvalue"))%><br>
-            Item name: <% Response.Write(Session("namevalue"))%><br>
-            Price: <% Response.Write(Session("pricevalue"))%> <br>
-            Stock: <% Response.Write(Session("stockvalue"))%><br>
-            <img src='images/<% Response.Write(Session("picvalue"))%>.jpg'  alt='bike picture' height='200' width='200'><br/>
-            Bid Amount: $<asp:TextBox ID="bidamount" runat="server"></asp:TextBox><br/>
-            <asp:Button ID="Button1" class='btn btn-primary btn-lg' runat="server" Text="Back to Bikes" /><asp:Button ID="placebid" class='btn btn-primary btn-lg' runat="server" Text="Place a Bid" />
-            <br>
             
-            *minimum bid must be over $5000
+           
                            
             
         </div>
+     
        
     </section>
 </asp:Content>
