@@ -32,16 +32,30 @@
     <section class="belowheader">
         <div id="pagecontent" class="row" runat="server">
             <div >
-                Welcome to Custom Page
+                <h1>Welcome to Custom Page</h1>
                 <br />
                 <br />
-                <select id="displayDropList" runat="server"></select><asp:Button ID="Button3" runat="server" Text="Search" />
+                <div id="selectbox">
+                <select id="displayDropList" runat="server"></select><asp:Button  class="btn btn-custom" ID="Button3" runat="server" Text="Search" />
+                </div>
                 <br />
             </div>
-            <div id ="itemresults" runat="server" class="holder">
+            <div class="container-fluid">
+                <div class="row">
+                <div class="col-md-4 faketableheader">Name</div>
+                <div class="col-md-4 faketableheader">Price</div>
+                <div class="col-md-4 faketableheader">Stock</div>
+                </div>
             </div>
+            
+            <div id ="itemresults" runat="server" class="container-fluid">
+
+
+            </div>
+             
         </div>
         
     </section>
+    
 
 </asp:Content>

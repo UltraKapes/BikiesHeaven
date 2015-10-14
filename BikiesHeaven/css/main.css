@@ -989,7 +989,6 @@ font-size: 1.5em;
   box-shadow: none;
   -webkit-box-shadow: none;
 }
-
 h2 {
 
 margin: 20px 0px 0px 0px;
@@ -1025,4 +1024,72 @@ margin: 40px 0px 0px 0px;
 
 
 
+}
+#selectbox {
+    text-align:center;
+    
+}
+
+#MainContent_displayDropList {
+width:300px;
+height:50px;
+margin: 0 auto;
+font-size:1.5em;
+border:2px solid #46004A;
+border-radius: 10px;
+}
+
+.btn-custom {
+color: #fff;
+margin-left:25px;
+height:50px;
+margin-top: -6px;
+border-radius:25px;
+width:100px;
+font-size:5em;
+background-color: #46004A;
+}
+
+
+#MainContent_Button3 {
+font-size: 20px;
+}
+
+.faketableheader {
+
+border: 1px solid black;
+
+padding:10px 0px;
+}
+
+.faketable {
+
+margin:0;
+
+
+border: 1px solid black;
+border-bottom:0;
+padding:10px 0px;
+
+
+
+}
+
+
+.faketablerow:last-child{border-bottom:1px solid grey}
+    
+
+
+.itemlink {
+
+    color: #46004A;
+    text-decoration: none;
+}
+
+
+.itemlink:hover 
+{
+     color:#46004A; 
+     text-decoration:none; 
+     cursor:pointer;  
 }
