@@ -75,23 +75,23 @@
            <table class="table table-bordered">
             <tr>
                 <th>Highest bid</th>
-                <td>$<% Response.Write(Session("highestBid"))%></td>
+                <td>$ <% Response.Write(Session("highestBid"))%></td>
             </tr>
             <tr>
               <th>Item id</th>
-              <td>$<% Response.Write(Session("idvalue"))%></td>
+              <td><% Response.Write(Session("idvalue"))%></td>
             </tr>
             <tr>
               <th>Item name</th>
-              <td>$<% Response.Write(Session("namevalue"))%></td>
+              <td><% Response.Write(Session("namevalue"))%></td>
             </tr>
             <tr>
               <th>Price</th>
-              <td>$<% Response.Write(Session("pricevalue"))%></td>
+              <td>$ <% Response.Write(Session("pricevalue"))%></td>
             </tr>
             <tr>
               <th>Stock</th>
-              <td>$<% Response.Write(Session("stockvalue"))%></td>
+              <td><% Response.Write(Session("stockvalue"))%></td>
             </tr>
  
             <tr>
