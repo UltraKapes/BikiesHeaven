@@ -70,10 +70,13 @@
                 For i = 0 To items.Count - 1
                     Dim appendItems As New Literal()
 
-                    appendItems.Text = "<div id=" + "'" + items(i)(0).ToString() + "'" + " class='try'> Name :  " + items(i)(1).ToString() + "<br/>
-                        Price : " + items(i)(2).ToString() + "<br/>
-                        Stock : " + items(i)(3).ToString() + "</div>"
+
+
+                    appendItems.Text = "<div id=" + "'" + items(i)(0).ToString() + "'" + " class='row faketablerow '><div class='col-md-4 col-xs-4 col-lg-4 faketable'>" + items(i)(1).ToString() + "</div>
+                        <div class='col-md-4 faketable'> " + items(i)(2).ToString() + "</div>
+                        <div class='col-md-4 faketable'>" + items(i)(3).ToString() + "</div></div>"
                     itemresults.Controls.Add(appendItems)
+
                 Next i
             Else
                 For Each node As XElement In itemlist...<item>
@@ -95,9 +98,9 @@
                 For i = 0 To items.Count - 1
                     Dim appendItems As New Literal()
 
-                    appendItems.Text = "<div id=" + "'" + items(i)(0).ToString() + "'" + " class='try'> Name :  " + items(i)(1).ToString() + "<br/>
-                        Price : " + items(i)(2).ToString() + "<br/>
-                        Stock : " + items(i)(3).ToString() + "</div>"
+                    appendItems.Text = "<div id=" + "'" + items(i)(0).ToString() + "'" + " class='row faketablerow '><div class='col-md-4 col-xs-4 col-lg-4 faketable'>" + items(i)(1).ToString() + "</div>
+                        <div class='col-md-4 faketable'> " + items(i)(2).ToString() + "</div>
+                        <div class='col-md-4 faketable'>" + items(i)(3).ToString() + "</div></div>"
                     itemresults.Controls.Add(appendItems)
                 Next i
 

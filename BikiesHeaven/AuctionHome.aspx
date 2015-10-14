@@ -30,6 +30,7 @@
     </header><!--/header-->
 
     <section class="belowheader">
+       
         <div id="login" class="row" runat="server">
             <div  class="loginwrapper" >
                 <div class="login"></div>
@@ -48,15 +49,28 @@
 
         </div>
         <div id="pagecontent" class="row" runat="server">
-            <div >
-                Welcome to Auction Page
+            <div>
+                <h1>Welcome to Auction Page</h1>
                 <br />
                 <br />
-                <select id="displayDropList" runat="server"></select><asp:Button ID="Button3" runat="server" Text="Search" />
+                <div id="selectbox">
+                <select id="displayDropList" runat="server"></select><asp:Button  class="btn btn-custom" ID="Button3" runat="server" Text="Search" />
+                </div>
                 <br />
             </div>
-            <div id ="itemresults" runat="server" class="holder">
+            <div class="container-fluid">
+                <div class="row">
+                <div class="col-md-4 faketableheader">Name</div>
+                <div class="col-md-4 faketableheader">Price</div>
+                <div class="col-md-4 faketableheader">Stock</div>
+                </div>
             </div>
+            
+            <div id ="itemresults" runat="server" class="container-fluid">
+
+
+            </div>
+             
         </div>
         
     </section>

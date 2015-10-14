@@ -124,16 +124,20 @@ Public Class AuctionHome
                 For i = 0 To items.Count - 1
                     Dim appendItems As New Literal()
                     If items(i)(3).ToString() = "0" Then
-                        appendItems.Text = "<div id=" + "'" + items(i)(0).ToString() + "'" + " class='try'> Name :  " + items(i)(1).ToString() + "<br/>
-                        Price : " + items(i)(2).ToString() + "<br/>
-                        Stock : " + items(i)(3).ToString() + "</div>"
+                        appendItems.Text = "<div id=" + "'" + items(i)(0).ToString() + "'" + " class='row faketablerow '><div class='col-md-4 col-xs-4 col-lg-4 faketable'>" + items(i)(1).ToString() + "</div>
+                        <div class='col-md-4 faketable'> " + items(i)(2).ToString() + "</div>
+                        <div class='col-md-4 faketable'>" + items(i)(3).ToString() + "</div></div>"
                         itemresults.Controls.Add(appendItems)
 
                     Else
-                        appendItems.Text = "<div id=" + "'" + items(i)(0).ToString() + "'" + " class='try'><a href='ItemsPage.aspx?itemid=" + items(i)(0).ToString() + "'> Name :  " + items(i)(1).ToString() + "<br/>
-                        Price : " + items(i)(2).ToString() + "<br/>
-                        Stock : " + items(i)(3).ToString() + "</a></div>"
+                        appendItems.Text = "<div id=" + "'" + items(i)(0).ToString() + "'" + " class='row faketablerow'><a class='itemlink' href='ItemsPage.aspx?itemid=" + items(i)(0).ToString() + "'><div class='col-md-4 col-xs-4 col-lg-4 faketable'>" + items(i)(1).ToString() + "</div>
+                        <div class='col-md-4 faketable'> " + items(i)(2).ToString() + "</div>
+                        <div class='col-md-4 faketable'>" + items(i)(3).ToString() + "</div></a></div>"
                         itemresults.Controls.Add(appendItems)
+                        'appendItems.Text = "<div id=" + "'" + items(i)(0).ToString() + "'" + " class='try'><a href='ItemsPage.aspx?itemid=" + items(i)(0).ToString() + "'> Name :  " + items(i)(1).ToString() + "<br/>
+                        'Price : " + items(i)(2).ToString() + "<br/>
+                        'Stock : " + items(i)(3).ToString() + "</a></div>"
+                        'itemresults.Controls.Add(appendItems)
                     End If
                 Next i
             Else
@@ -156,15 +160,15 @@ Public Class AuctionHome
                 For i = 0 To items.Count - 1
                     Dim appendItems As New Literal()
                     If items(i)(3).ToString() = "0" Then
-                        appendItems.Text = "<div id=" + "'" + items(i)(0).ToString() + "'" + " class='try'> Name :  " + items(i)(1).ToString() + "<br/>
-                        Price : " + items(i)(2).ToString() + "<br/>
-                        Stock : " + items(i)(3).ToString() + "</div>"
+                        appendItems.Text = "<div id=" + "'" + items(i)(0).ToString() + "'" + " class='row faketablerow '><div class='col-md-4 col-xs-4 col-lg-4 faketable'>" + items(i)(1).ToString() + "</div>
+                        <div class='col-md-4 faketable'> " + items(i)(2).ToString() + "</div>
+                        <div class='col-md-4 faketable'>" + items(i)(3).ToString() + "</div></div>"
                         itemresults.Controls.Add(appendItems)
 
                     Else
-                        appendItems.Text = "<div id=" + "'" + items(i)(0).ToString() + "'" + " class='try'><a href='ItemsPage.aspx?itemid=" + items(i)(0).ToString() + "'> Name :  " + items(i)(1).ToString() + "<br/>
-                        Price : " + items(i)(2).ToString() + "<br/>
-                        Stock : " + items(i)(3).ToString() + "</a></div>"
+                        appendItems.Text = "<div id=" + "'" + items(i)(0).ToString() + "'" + " class='row faketablerow'><a class='itemlink' href='ItemsPage.aspx?itemid=" + items(i)(0).ToString() + "'><div class='col-md-4 col-xs-4 col-lg-4 faketable'>" + items(i)(1).ToString() + "</div>
+                        <div class='col-md-4 faketable'> " + items(i)(2).ToString() + "</div>
+                        <div class='col-md-4 faketable'>" + items(i)(3).ToString() + "</div></a></div>"
                         itemresults.Controls.Add(appendItems)
                     End If
                 Next i
