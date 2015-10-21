@@ -37,16 +37,14 @@
 
     Protected Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         Dim selectedID As String = displayDropList.Value
-        displayItems(selectedID)
+        findItems(selectedID)
 
     End Sub
 
-    Protected Sub displayItems(manufuactuerID)
+    Protected Sub findItems(manufuactuerID)
 
         Dim items As New ArrayList
         Dim id As String = manufuactuerID
-
-
 
         Try
             itemresults.InnerHtml = ""
@@ -65,19 +63,8 @@
                     list.Add(pricenode.Value)
                     list.Add(stocknode.Value)
                     items.Add(list)
-
                 Next
-                For i = 0 To items.Count - 1
-                    Dim appendItems As New Literal()
-
-
-
-                    appendItems.Text = "<div id=" + "'" + items(i)(0).ToString() + "'" + " class='row faketablerow '><div class='col-md-4 col-xs-4 col-lg-4 faketable'>" + items(i)(1).ToString() + "</div>
-                        <div class='col-md-4 faketable'> " + items(i)(2).ToString() + "</div>
-                        <div class='col-md-4 faketable'>" + items(i)(3).ToString() + "</div></div>"
-                    itemresults.Controls.Add(appendItems)
-
-                Next i
+                displayItems(items)
             Else
                 For Each node As XElement In itemlist...<item>
                     Dim list As New ArrayList
@@ -93,25 +80,35 @@
                         list.Add(stocknode.Value)
                         items.Add(list)
                     End If
-
                 Next
-                For i = 0 To items.Count - 1
-                    Dim appendItems As New Literal()
-
-                    appendItems.Text = "<div id=" + "'" + items(i)(0).ToString() + "'" + " class='row faketablerow '><div class='col-md-4 col-xs-4 col-lg-4 faketable'>" + items(i)(1).ToString() + "</div>
-                        <div class='col-md-4 faketable'> " + items(i)(2).ToString() + "</div>
-                        <div class='col-md-4 faketable'>" + items(i)(3).ToString() + "</div></div>"
-                    itemresults.Controls.Add(appendItems)
-                Next i
-
+                displayItems(items)
             End If
 
-
-            Session("username") = items(1)(3).ToString()
         Catch errorVariable As Exception
             'Error trapping
             Console.Write(errorVariable.ToString())
         End Try
+
+
+
+
+    End Sub
+
+
+
+    Protected Sub displayItems(items As ArrayList)
+        For i = 0 To items.Count - 1
+            Dim appendItems As New Literal()
+
+
+
+            appendItems.Text = "<div id=" + "'" + items(i)(0).ToString() + "'" + " class='row faketablerow '><div class='col-md-4 col-xs-4 col-lg-4 faketable'>" + items(i)(1).ToString() + "</div>
+                        <div class='col-md-4 faketable'> " + items(i)(2).ToString() + "</div>
+                        <div class='col-md-4 faketable'>" + items(i)(3).ToString() + "</div></div>"
+            itemresults.Controls.Add(appendItems)
+
+        Next i
+
     End Sub
 
 End Class

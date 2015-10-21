@@ -2,8 +2,7 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <%
-'Session("username")="Donald Duck"
-'Session("age")=50
+
 %>
     <header id="header">
         <nav id="main-menu" class="navbar navbar-default navbar-fixed-top" role="banner">
@@ -25,7 +24,7 @@
                         <li class="scroll"><a href="Custom">Custom</a></li>
                         <li class="scroll"><a href="AuctionHome">Auction</a></li> 
                         <li class="scroll"><a href="#">About</a></li>
-                        <li class="scroll"><a href="#">Team</a></li>
+                        <li class="scroll"><a href="#">User Manual</a></li>
                         <li class="scroll"><a href="#">Contact</a></li>                        
                     </ul>
                 </div>

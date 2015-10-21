@@ -1,4 +1,5 @@
-﻿Imports System.IO
+﻿
+Imports System.IO
 Imports System.Xml
 Imports System.Text
 Imports System.Xml.Linq
@@ -91,16 +92,16 @@ Public Class AuctionHome
 
     Protected Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         Dim selectedID As String = displayDropList.Value
-        displayItems(selectedID)
+        findItems(selectedID)
 
     End Sub
 
-    Protected Sub displayItems(manufuactuerID)
+
+
+    Protected Sub findItems(manufuactuerID)
 
         Dim items As New ArrayList
         Dim id As String = manufuactuerID
-
-
 
         Try
             itemresults.InnerHtml = ""
@@ -121,7 +122,43 @@ Public Class AuctionHome
                     items.Add(list)
 
                 Next
-                For i = 0 To items.Count - 1
+                displayItems(items)
+            Else
+                For Each node As XElement In itemlist...<item>
+                    Dim list As New ArrayList
+                    Dim xmlid As String = node.Element("manid")
+                    If xmlid = id Then
+                        Dim idnode As XElement = node.Element("id")
+                        Dim namenode As XElement = node.Element("name")
+                        Dim pricenode As XElement = node.Element("price")
+                        Dim stocknode As XElement = node.Element("stock")
+                        list.Add(idnode.Value)
+                        list.Add(namenode.Value)
+                        list.Add(pricenode.Value)
+                        list.Add(stocknode.Value)
+                        items.Add(list)
+                    End If
+
+                Next
+                displayItems(items)
+            End If
+
+        Catch errorVariable As Exception
+            'Error trapping
+            Console.Write(errorVariable.ToString())
+        End Try
+
+
+
+
+    End Sub
+
+
+
+    Protected Sub displayItems(items As ArrayList)
+
+
+        For i = 0 To items.Count - 1
                     Dim appendItems As New Literal()
                     If items(i)(3).ToString() = "0" Then
                         appendItems.Text = "<div id=" + "'" + items(i)(0).ToString() + "'" + " class='row faketablerow '><div class='col-md-4 col-xs-4 col-lg-4 faketable'>" + items(i)(1).ToString() + "</div>
@@ -140,47 +177,7 @@ Public Class AuctionHome
                         'itemresults.Controls.Add(appendItems)
                     End If
                 Next i
-            Else
-                For Each node As XElement In itemlist...<item>
-                    Dim list As New ArrayList
-                    Dim xmlid As String = node.Element("manid")
-                    If xmlid = id Then
-                        Dim idnode As XElement = node.Element("id")
-                        Dim namenode As XElement = node.Element("name")
-                        Dim pricenode As XElement = node.Element("price")
-                        Dim stocknode As XElement = node.Element("stock")
-                        list.Add(idnode.Value)
-                        list.Add(namenode.Value)
-                        list.Add(pricenode.Value)
-                        list.Add(stocknode.Value)
-                        items.Add(list)
-                    End If
 
-                Next
-                For i = 0 To items.Count - 1
-                    Dim appendItems As New Literal()
-                    If items(i)(3).ToString() = "0" Then
-                        appendItems.Text = "<div id=" + "'" + items(i)(0).ToString() + "'" + " class='row faketablerow '><div class='col-md-4 col-xs-4 col-lg-4 faketable'>" + items(i)(1).ToString() + "</div>
-                        <div class='col-md-4 faketable'> " + items(i)(2).ToString() + "</div>
-                        <div class='col-md-4 faketable'>" + items(i)(3).ToString() + "</div></div>"
-                        itemresults.Controls.Add(appendItems)
-
-                    Else
-                        appendItems.Text = "<div id=" + "'" + items(i)(0).ToString() + "'" + " class='row faketablerow'><a class='itemlink' href='ItemsPage.aspx?itemid=" + items(i)(0).ToString() + "'><div class='col-md-4 col-xs-4 col-lg-4 faketable'>" + items(i)(1).ToString() + "</div>
-                        <div class='col-md-4 faketable'> " + items(i)(2).ToString() + "</div>
-                        <div class='col-md-4 faketable'>" + items(i)(3).ToString() + "</div></a></div>"
-                        itemresults.Controls.Add(appendItems)
-                    End If
-                Next i
-
-            End If
-
-
-            Session("username") = items(1)(3).ToString()
-        Catch errorVariable As Exception
-            'Error trapping
-            Console.Write(errorVariable.ToString())
-        End Try
     End Sub
 
 End Class

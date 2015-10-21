@@ -14,20 +14,6 @@ Public Class itemspage
         End If
 
 
-        'Dim appendItems As New Literal()
-        'appendItems.Text = "<div>Item Id:" + idvalue + "<br>
-        '                    Item name:" + namevalue + "<br>
-        '                    Price:" + pricevalue + "<br>
-        '                    Stock:" + stockvalue + "<br>
-        '                    <img src='images/" + picvalue + ".jpg'  alt='bike picture' height='200' width='200'><br/>
-        '                    Bid Amount: $<input id='bidamount'runat='server' type='text'><br/>
-        '                    <a class='btn btn-primary btn-lg' onclick='placebidclick();'>Place Bid</a><br>
-        '                    *minimum bid must be $5000
-        '                    </div>"
-
-        'info.Controls.Add(appendItems)
-
-
 
 
     End Sub
@@ -39,6 +25,32 @@ Public Class itemspage
         Return result
 
     End Function
+
+
+    Protected Sub sendEmail(amount As Integer)
+        Try
+            Dim Smtp_Server As New SmtpClient
+            Dim e_mail As New Net.Mail.MailMessage()
+            Smtp_Server.UseDefaultCredentials = False
+            Smtp_Server.Credentials = New Net.NetworkCredential("bikiesheaven@gmail.com", "password")
+            Smtp_Server.Port = 587
+            Smtp_Server.EnableSsl = True
+            Smtp_Server.Host = "smtp.gmail.com"
+
+            e_mail = New Net.Mail.MailMessage()
+            e_mail.From = New MailAddress("bhauction@gmail.com")
+            e_mail.To.Add("bids@store.com")
+            e_mail.Subject = "New Bid"
+            e_mail.IsBodyHtml = False
+            e_mail.Body = "Bid by " + Session("userID") + " on item " + Session("idvalue") + " for amount $" + amount
+            Smtp_Server.Send(e_mail)
+            MsgBox("Mail Sent")
+
+        Catch error_t As Exception
+
+            Exit Try
+        End Try
+    End Sub
 
     Protected Sub placebid_Click(sender As Object, e As EventArgs) Handles placebid.Click
 
@@ -86,28 +98,7 @@ Public Class itemspage
 
                                 xmlfile.Save(location)
 
-                                Try
-                                    Dim Smtp_Server As New SmtpClient
-                                    Dim e_mail As New Net.Mail.MailMessage()
-                                    Smtp_Server.UseDefaultCredentials = False
-                                    Smtp_Server.Credentials = New Net.NetworkCredential("bikiesheaven@gmail.com", "password")
-                                    Smtp_Server.Port = 587
-                                    Smtp_Server.EnableSsl = True
-                                    Smtp_Server.Host = "smtp.gmail.com"
-
-                                    e_mail = New Net.Mail.MailMessage()
-                                    e_mail.From = New MailAddress("bhauction@gmail.com")
-                                    e_mail.To.Add("bids@store.com")
-                                    e_mail.Subject = "New Bid"
-                                    e_mail.IsBodyHtml = False
-                                    e_mail.Body = "Bid by " + Session("userID") + " on item " + Session("idvalue") + " for amount $" + amount
-                                    Smtp_Server.Send(e_mail)
-                                    MsgBox("Mail Sent")
-
-                                Catch error_t As Exception
-                                    'MsgBox(error_t.ToString)
-                                    Exit Try
-                                End Try
+                                sendEmail(amount)
 
 
                                 MsgBox("Your bid Of $" + amount + " has been accepted", , "Completed Bid")
@@ -152,28 +143,7 @@ Public Class itemspage
 
                                 xmlfile.Save(location)
 
-                                Try
-                                    Dim Smtp_Server As New SmtpClient
-                                    Dim e_mail As New Net.Mail.MailMessage()
-                                    Smtp_Server.UseDefaultCredentials = False
-                                    Smtp_Server.Credentials = New Net.NetworkCredential("bikiesheaven@gmail.com", "password")
-                                    Smtp_Server.Port = 587
-                                    Smtp_Server.EnableSsl = True
-                                    Smtp_Server.Host = "smtp.gmail.com"
-
-                                    e_mail = New Net.Mail.MailMessage()
-                                    e_mail.From = New MailAddress("bhauction@gmail.com")
-                                    e_mail.To.Add("bids@store.com")
-                                    e_mail.Subject = "New Bid"
-                                    e_mail.IsBodyHtml = False
-                                    e_mail.Body = "Bid by " + Session("userID") + " on item " + Session("idvalue") + " for amount $" + amount
-                                    Smtp_Server.Send(e_mail)
-                                    MsgBox("Mail Sent")
-
-                                Catch error_t As Exception
-                                    'MsgBox(error_t.ToString)
-                                    Exit Try
-                                End Try
+                                sendEmail(amount)
 
 
                                 MsgBox("Your bid Of $" + amount + " has been accepted", , "Completed Bid")
@@ -191,7 +161,7 @@ Public Class itemspage
                     bidamount.Text = ""
                 End If
             Else
-                MsgBox("Your bid was not a number, please try again", , "Failed Bid")
+                MsgBox("Your bid was not a valid number, please try again", , "Failed Bid")
                 bidamount.Text = ""
             End If
             bidamount.Text = ""
