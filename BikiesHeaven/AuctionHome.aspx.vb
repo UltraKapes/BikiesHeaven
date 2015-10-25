@@ -171,11 +171,8 @@ Public Class AuctionHome
                         <div class='col-md-4 faketable'> " + items(i)(2).ToString() + "</div>
                         <div class='col-md-4 faketable'>" + items(i)(3).ToString() + "</div></a></div>"
                         itemresults.Controls.Add(appendItems)
-                        'appendItems.Text = "<div id=" + "'" + items(i)(0).ToString() + "'" + " class='try'><a href='ItemsPage.aspx?itemid=" + items(i)(0).ToString() + "'> Name :  " + items(i)(1).ToString() + "<br/>
-                        'Price : " + items(i)(2).ToString() + "<br/>
-                        'Stock : " + items(i)(3).ToString() + "</a></div>"
-                        'itemresults.Controls.Add(appendItems)
-                    End If
+
+            End If
                 Next i
 
     End Sub

@@ -17,12 +17,9 @@
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
                         <li class="scroll"><a href="Default">Home</a></li>
-                        <li class="scroll"><a href="#">Our Bikes</a></li>
                         <li class="scroll active"><a href="Custom">Custom</a></li>
                         <li class="scroll"><a href="AuctionHome">Auction</a></li> 
-                        <li class="scroll"><a href="#">About</a></li>
-                        <li class="scroll"><a href="#">User Manual</a></li>
-                        <li class="scroll"><a href="#">Contact</a></li>                        
+                        <li class="scroll"><a href="#">User Manual</a></li>                        
                     </ul>
                 </div>
             </div><!--/.container-->
