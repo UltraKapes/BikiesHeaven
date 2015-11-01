@@ -230,6 +230,14 @@
     <Content Include="fonts\fontawesome-webfont.ttf" />
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="images\auctionpage.jpg" />
+    <Content Include="images\bidpage.jpg" />
+    <Content Include="images\confirmpage.jpg" />
+    <Content Include="images\custompage.jpg" />
+    <Content Include="images\customselect.jpg" />
+    <Content Include="images\harley.jpg" />
+    <Content Include="images\login.jpg" />
+    <Content Include="UserManual.aspx" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="images\bike.png" />
     <Content Include="images\bike.svg" />
@@ -488,6 +496,13 @@
     </Compile>
     <Compile Include="Site.Mobile.Master.designer.vb">
       <DependentUpon>Site.Mobile.Master</DependentUpon>
+    </Compile>
+    <Compile Include="UserManual.aspx.designer.vb">
+      <DependentUpon>UserManual.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserManual.aspx.vb">
+      <DependentUpon>UserManual.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>

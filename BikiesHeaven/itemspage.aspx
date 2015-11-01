@@ -20,7 +20,7 @@
                         <li class="scroll"><a href="#">Home</a></li>
                         <li class="scroll"><a href="Custom">Custom</a></li>
                         <li class="scroll active"><a href="AuctionHome">Auction</a></li>
-                        <li class="scroll"><a href="#">User Manual</a></li>                         
+                        <li class="scroll"><a href="UserManual">User Manual</a></li>                         
                     </ul>
                 </div>
             </div><!--/.container-->
